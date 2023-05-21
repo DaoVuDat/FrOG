@@ -11,6 +11,10 @@ namespace FrOG
     {
         //Settings
         public static string solversettings;
+        // Custom settings
+        public static int CustomMaxIteration;
+        public static int CustomPopulation;
+
 
         public static bool BolMaximize;
         public static bool BolMaxIter;
@@ -176,7 +180,15 @@ namespace FrOG
 
             //Run Solver
             //MessageBox.Show("Starting Solver", "FrOG Debug");
-            var bolSolverStarted = solver.RunSolver(variables, EvaluateFunction, preset, solversettings, _component.GhInOut.ComponentFolder, _component.GhInOut.DocumentPath);
+            var bolSolverStarted = solver.RunSolver(
+                variables, 
+                EvaluateFunction, 
+                preset, 
+                solversettings, 
+                _component.GhInOut.ComponentFolder, 
+                _component.GhInOut.DocumentPath,
+                maxIterations: CustomMaxIteration,
+                population: CustomPopulation);
 
             if (!bolSolverStarted)
             {

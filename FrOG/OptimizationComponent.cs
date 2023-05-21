@@ -20,7 +20,12 @@ namespace FrOG
         #endregion
 
         #region Constructor
-        public OptimizationComponent() : base("FrOG 0.1", "Framework for Optimization in Grasshopper", "FrOG provides an interface for the easy implementation of black-box optimization algorithms in Grasshopper.\n\nBlack-box algorithms optimize problems soley based on inputs and outputs.", "Params", "Util")
+        public OptimizationComponent() : base(
+            "MetaOptim", 
+            "Optimizer", 
+            "Meta-heuristic Optimizer AVOA",
+            "Params", 
+            "Util")
         {
             NewInstanceGuid();
             OptimizationWindow = null;

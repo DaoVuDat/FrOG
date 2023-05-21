@@ -8,7 +8,7 @@ namespace FrOG
     internal static class SolverList
     {
         //Add solvers here
-        public static List<ISolver> GetSolverList = new List<ISolver>() { new Hillclimber(), new SimpleGA() };
+        public static List<ISolver> GetSolverList = new List<ISolver>() { new GWO() };
 
         public static List<string> PresetNames
         {
@@ -82,7 +82,7 @@ namespace FrOG
         //This is where most of the work is done.
         //The constructor should do only minimal work, since all solvers are instanced when the FrOG window loads.
 
-        bool RunSolver(List<Variable> variables, Func<IList<decimal>,double> evaluate, string preset, string expertsettings, string installFolder, string documentPath);
+        bool RunSolver(List<Variable> variables, Func<IList<decimal>,double> evaluate, string preset, string expertsettings, string installFolder, string documentPath, int maxIterations, int population);
 
         //Return eventual error messages to show in MessageBox after the solver stopped, otherwise return empty.
         string GetErrorMessage();

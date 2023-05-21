@@ -7,14 +7,15 @@
     <ProjectGuid>{A782148A-EB38-4847-A7E5-196E038C416C}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>FrOG</RootNamespace>
-    <AssemblyName>FrOG</AssemblyName>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <RootNamespace>MetaOptims</RootNamespace>
+    <AssemblyName>MetaOptims</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <SccProjectName>SAK</SccProjectName>
     <SccLocalPath>SAK</SccLocalPath>
     <SccAuxPath>SAK</SccAuxPath>
     <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -28,27 +29,23 @@
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>C:\Opossum\</OutputPath>
+    <OutputPath>..\output\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="GalapagosLibrary">
-      <HintPath>D:\Dropbox\Opossum_Development\Ressources\GalapagosLibrary.dll</HintPath>
+      <HintPath>..\libraries\GalapagosLibrary.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="GH_IO">
-      <HintPath>D:\Dropbox\Opossum_Development\Ressources\GH_IO.dll</HintPath>
+      <HintPath>..\libraries\GH_IO.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Grasshopper">
-      <HintPath>D:\Dropbox\Opossum_Development\Ressources\Grasshopper.dll</HintPath>
+      <HintPath>..\libraries\Grasshopper.dll</HintPath>
       <Private>False</Private>
-    </Reference>
-    <Reference Include="MetaheuristicsLibrary, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>D:\Dropbox\Opossum_Development\Ressources\MetaheuristicsLibrary.dll</HintPath>
     </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="System" />
@@ -61,8 +58,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="LoggerLog.cs" />
-    <Compile Include="Solvers\HillclimberAlgorithm.cs" />
-    <Compile Include="Solvers\Hillclimber.cs" />
     <Compile Include="Parsing.cs" />
     <Compile Include="OptimizationWindow.cs">
       <SubType>Form</SubType>
@@ -82,7 +77,8 @@
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
     <Compile Include="SolverInterface.cs" />
-    <Compile Include="Solvers\SimpleGA.cs" />
+    <Compile Include="Solvers\GWO.cs" />
+    <Compile Include="Utils\Utils.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="OptimizationWindow.resx">

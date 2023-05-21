@@ -118,6 +118,10 @@ namespace FrOG
             if (CheckBoxRuns.Checked) OptimizationLoop.Runs = Convert.ToInt32(numUpDownRuns.Value);
             else OptimizationLoop.Runs = 1;
 
+            // CUSTOMIZE Max Iterations and Populations
+            OptimizationLoop.CustomMaxIteration = Convert.ToInt32(maxIterationsNumbericalUpDown.Value);
+            OptimizationLoop.CustomPopulation = Convert.ToInt32(populationNumericalUpDown.Value);
+
             //Start Optimization
             backgroundWorkerSolver.RunWorkerAsync(_frogComponent);
 
@@ -191,7 +195,7 @@ namespace FrOG
             }
 
             //Update labels
-            labelIteration.Text = "Iteration: " + iteration;
+            labelIteration.Text = "Number of Func Evaluation (NFE):: " + iteration;
             labelBestValue.Text = "Best Value: " + Math.Round(values[iteration - 1], 3);
 
             //Show Labels

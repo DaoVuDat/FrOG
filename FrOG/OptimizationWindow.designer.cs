@@ -32,12 +32,16 @@ namespace FrOG
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(OptimizationWindow));
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.buttonCancel = new System.Windows.Forms.Button();
             this.buttonOK = new System.Windows.Forms.Button();
             this.tabOptimize = new System.Windows.Forms.TabPage();
+            this.maxIterationsNumbericalUpDown = new System.Windows.Forms.NumericUpDown();
+            this.populationNumericalUpDown = new System.Windows.Forms.NumericUpDown();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.labelBestValue = new System.Windows.Forms.Label();
             this.labelIteration = new System.Windows.Forms.Label();
             this.bestValueChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
@@ -69,6 +73,8 @@ namespace FrOG
             this.label3 = new System.Windows.Forms.Label();
             this.backgroundWorkerSolver = new System.ComponentModel.BackgroundWorker();
             this.tabOptimize.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.maxIterationsNumbericalUpDown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.populationNumericalUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bestValueChart)).BeginInit();
             this.groupOptimizationStartStop.SuspendLayout();
             this.GroupOptimizationAlgorithm.SuspendLayout();
@@ -101,6 +107,10 @@ namespace FrOG
             // 
             // tabOptimize
             // 
+            this.tabOptimize.Controls.Add(this.maxIterationsNumbericalUpDown);
+            this.tabOptimize.Controls.Add(this.populationNumericalUpDown);
+            this.tabOptimize.Controls.Add(this.label2);
+            this.tabOptimize.Controls.Add(this.label1);
             this.tabOptimize.Controls.Add(this.labelBestValue);
             this.tabOptimize.Controls.Add(this.labelIteration);
             this.tabOptimize.Controls.Add(this.bestValueChart);
@@ -110,6 +120,56 @@ namespace FrOG
             resources.ApplyResources(this.tabOptimize, "tabOptimize");
             this.tabOptimize.Name = "tabOptimize";
             this.tabOptimize.UseVisualStyleBackColor = true;
+            // 
+            // maxIterationsNumbericalUpDown
+            // 
+            resources.ApplyResources(this.maxIterationsNumbericalUpDown, "maxIterationsNumbericalUpDown");
+            this.maxIterationsNumbericalUpDown.Maximum = new decimal(new int[] {
+            100000,
+            0,
+            0,
+            0});
+            this.maxIterationsNumbericalUpDown.Minimum = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            this.maxIterationsNumbericalUpDown.Name = "maxIterationsNumbericalUpDown";
+            this.maxIterationsNumbericalUpDown.Value = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            // 
+            // populationNumericalUpDown
+            // 
+            resources.ApplyResources(this.populationNumericalUpDown, "populationNumericalUpDown");
+            this.populationNumericalUpDown.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
+            this.populationNumericalUpDown.Minimum = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            this.populationNumericalUpDown.Name = "populationNumericalUpDown";
+            this.populationNumericalUpDown.Value = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            // 
+            // label2
+            // 
+            resources.ApplyResources(this.label2, "label2");
+            this.label2.Name = "label2";
+            // 
+            // label1
+            // 
+            resources.ApplyResources(this.label1, "label1");
+            this.label1.Name = "label1";
             // 
             // labelBestValue
             // 
@@ -126,30 +186,30 @@ namespace FrOG
             // bestValueChart
             // 
             this.bestValueChart.BackColor = System.Drawing.Color.Transparent;
-            chartArea1.AxisX.LineWidth = 0;
-            chartArea1.AxisX2.LineWidth = 0;
-            chartArea1.AxisY.LineWidth = 0;
-            chartArea1.AxisY2.LineWidth = 0;
-            chartArea1.BorderWidth = 0;
-            chartArea1.InnerPlotPosition.Auto = false;
-            chartArea1.InnerPlotPosition.Height = 100F;
-            chartArea1.InnerPlotPosition.Width = 100F;
-            chartArea1.IsSameFontSizeForAllAxes = true;
-            chartArea1.Name = "ChartArea1";
-            chartArea1.Position.Auto = false;
-            chartArea1.Position.Height = 100F;
-            chartArea1.Position.Width = 100F;
-            this.bestValueChart.ChartAreas.Add(chartArea1);
-            legend1.Enabled = false;
-            legend1.Name = "Legend1";
-            this.bestValueChart.Legends.Add(legend1);
+            chartArea2.AxisX.LineWidth = 0;
+            chartArea2.AxisX2.LineWidth = 0;
+            chartArea2.AxisY.LineWidth = 0;
+            chartArea2.AxisY2.LineWidth = 0;
+            chartArea2.BorderWidth = 0;
+            chartArea2.InnerPlotPosition.Auto = false;
+            chartArea2.InnerPlotPosition.Height = 100F;
+            chartArea2.InnerPlotPosition.Width = 100F;
+            chartArea2.IsSameFontSizeForAllAxes = true;
+            chartArea2.Name = "ChartArea1";
+            chartArea2.Position.Auto = false;
+            chartArea2.Position.Height = 100F;
+            chartArea2.Position.Width = 100F;
+            this.bestValueChart.ChartAreas.Add(chartArea2);
+            legend2.Enabled = false;
+            legend2.Name = "Legend1";
+            this.bestValueChart.Legends.Add(legend2);
             resources.ApplyResources(this.bestValueChart, "bestValueChart");
             this.bestValueChart.Name = "bestValueChart";
-            series1.ChartArea = "ChartArea1";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Area;
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.bestValueChart.Series.Add(series1);
+            series2.ChartArea = "ChartArea1";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Area;
+            series2.Legend = "Legend1";
+            series2.Name = "Series1";
+            this.bestValueChart.Series.Add(series2);
             // 
             // groupOptimizationStartStop
             // 
@@ -214,8 +274,6 @@ namespace FrOG
             // 
             resources.ApplyResources(this.Tabs, "Tabs");
             this.Tabs.Controls.Add(this.tabOptimize);
-            this.Tabs.Controls.Add(this.tabSettings);
-            this.Tabs.Controls.Add(this.tabExpert);
             this.Tabs.Name = "Tabs";
             this.Tabs.SelectedIndex = 0;
             // 
@@ -404,6 +462,8 @@ namespace FrOG
             this.Load += new System.EventHandler(this.FrOGWindow_Load);
             this.tabOptimize.ResumeLayout(false);
             this.tabOptimize.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.maxIterationsNumbericalUpDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.populationNumericalUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bestValueChart)).EndInit();
             this.groupOptimizationStartStop.ResumeLayout(false);
             this.GroupOptimizationAlgorithm.ResumeLayout(false);
@@ -460,5 +520,9 @@ namespace FrOG
         private System.ComponentModel.BackgroundWorker backgroundWorkerSolver;
         private Label labelBestValue;
         private Label labelIteration;
+        private Label label2;
+        private Label label1;
+        private NumericUpDown maxIterationsNumbericalUpDown;
+        private NumericUpDown populationNumericalUpDown;
     }
 }
