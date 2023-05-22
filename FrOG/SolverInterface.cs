@@ -1,14 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using FrOG.Solvers;
+using MetaOptims.Solvers;
 
 namespace FrOG
 {
     internal static class SolverList
     {
         //Add solvers here
-        public static List<ISolver> GetSolverList = new List<ISolver>() { new GWO() };
+        public static List<ISolver> GetSolverList = new List<ISolver>() { new GWO(), new AVOA() };
 
         public static List<string> PresetNames
         {

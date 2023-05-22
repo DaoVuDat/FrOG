@@ -196,7 +196,7 @@ namespace FrOG
 
             //Update labels
             labelIteration.Text = "Number of Func Evaluation (NFE):: " + iteration;
-            labelBestValue.Text = "Best Value: " + Math.Round(values[iteration - 1], 3);
+            labelBestValue.Text = "Best Value: " + Math.Round(values[iteration - 1], 10);
 
             //Show Labels
             labelIteration.Visible = true;

@@ -1,4 +1,5 @@
 ﻿using FrOG.Utils;
+using FrOG;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -6,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FrOG.Solvers
+namespace MetaOptims.Solvers
 {
     public class GWO : ISolver
     {

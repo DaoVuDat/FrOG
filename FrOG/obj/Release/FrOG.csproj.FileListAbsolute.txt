@@ -23,3 +23,4 @@ H:\Projects\GrasshopperPlugin\FrOG\output\MetaOptims.dll
 H:\Projects\GrasshopperPlugin\FrOG\output\MetaOptims.pdb
 H:\Projects\GrasshopperPlugin\FrOG\FrOG\obj\Release\MetaOptims.dll
 H:\Projects\GrasshopperPlugin\FrOG\FrOG\obj\Release\MetaOptims.pdb
+H:\Projects\GrasshopperPlugin\FrOG\FrOG\obj\Release\FrOG.csproj.CopyComplete

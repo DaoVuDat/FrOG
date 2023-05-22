@@ -352,7 +352,7 @@ namespace FrOG
                 return double.NaN;
             }
 
-            var bolCast = objectiveGoo.CastTo(out objectiveValue);
+            var bolCast = objectiveGoo.CastTo<double>(out objectiveValue);
 
             if (bolCast) return objectiveValue;
 
