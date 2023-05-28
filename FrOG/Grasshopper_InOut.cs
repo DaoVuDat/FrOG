@@ -354,10 +354,15 @@ namespace FrOG
 
             var bolCast = objectiveGoo.CastTo<double>(out objectiveValue);
 
-            if (bolCast) return objectiveValue;
+            // Test
+            objectiveValue = double.Parse(objectiveGoo.ToString());
 
-            MessageBox.Show("Failed to cast objective value to double", "FrOG Error");
-            return double.NaN;
+            if (bolCast) return objectiveValue;
+            // MessageBox.Show(double.Parse(objectiveGoo.ToString()).ToString(), "FrOG Error");
+            // MessageBox.Show("Failed to cast objective value to double", "FrOG Error");
+
+            //return double.NaN;
+            return double.Parse(objectiveGoo.ToString());
         }
 
         //Genepool Helper Functions

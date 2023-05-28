@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doc>
+<assembly><name>Giraffe.ViewEngine</name></assembly>
+<members>
+<member name="T:Giraffe.ViewEngine.Accessibility">
+ <summary>
+ Attributes to support WAI-ARIA accessibility guidelines
+ </summary>
+</member>
+<member name="M:Giraffe.ViewEngine.HtmlElements.strf``1(Microsoft.FSharp.Core.PrintfFormat{``0,Microsoft.FSharp.Core.Unit,System.String,Giraffe.ViewEngine.HtmlElements.XmlNode})">
+ <summary>
+ The `strf` function will output the result from `sprintf fmt` as `encodedText`.
+ </summary>
+</member>
+<member name="P:Giraffe.ViewEngine.HtmlElements.str">
+ <summary>
+ An alias for the `encodedText` function.
+ </summary>
+</member>
+<member name="M:Giraffe.ViewEngine.HtmlElements.encodedText(System.String)">
+ <summary>
+ The `encodedText` function will output a string where the content has been HTML encoded.
+ </summary>
+</member>
+<member name="M:Giraffe.ViewEngine.HtmlElements.rawText(System.String)">
+ <summary>
+
+ The `rawText` function will create an object of type `XmlNode` where the content will be rendered in its original form (without encoding).
+
+ **Special Notice**
+
+ Please be aware that the the usage of `rawText` is mainly designed for edge cases where someone would purposefully want to inject HTML (or JavaScript) code into a rendered view. If not used carefully this could potentially lead to serious security vulnerabilities and therefore should be used only when explicitly required.
+
+ Most cases and particularly any user provided content should always be output via the `encodedText` function.
+ </summary>
+</member>
+</members>
+</doc>

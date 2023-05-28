@@ -20,6 +20,7 @@ namespace FrOG
             RequestProcessed
         }
         internal GrasshopperStates GrasshopperStatus;
+        private int currentCount;
 
         public OptimizationWindow(OptimizationComponent component)
         {
@@ -114,9 +115,7 @@ namespace FrOG
             OptimizationLoop.PresetIndex = comboBoxPresets.SelectedIndex;
 
             //Number of Runs
-            OptimizationLoop.BolRuns = CheckBoxRuns.Checked;
-            if (CheckBoxRuns.Checked) OptimizationLoop.Runs = Convert.ToInt32(numUpDownRuns.Value);
-            else OptimizationLoop.Runs = 1;
+            OptimizationLoop.Runs = 1;
 
             // CUSTOMIZE Max Iterations and Populations
             OptimizationLoop.CustomMaxIteration = Convert.ToInt32(maxIterationsNumbericalUpDown.Value);
@@ -171,6 +170,10 @@ namespace FrOG
         //Chart
         private void UpdateChart(List<double> values)
         {
+            if (values.Count % OptimizationLoop.CustomPopulation == 0) return;
+
+            var step = Math.Floor(values.Count / (double)OptimizationLoop.CustomPopulation);
+            
             //Clear chart data
             bestValueChart.Series.Clear();
 
@@ -189,13 +192,13 @@ namespace FrOG
             //Update chart data
             var iteration = values.Count;
 
-            for (var i = 0; i < iteration; i++)
+            for (var i = 0; i < iteration ; i++)
             {
-                series1.Points.AddXY(i, values[i]);
+                series1.Points.AddXY(i, values[i ]);
             }
 
             //Update labels
-            labelIteration.Text = "Number of Func Evaluation (NFE):: " + iteration;
+            labelIteration.Text = "Iterations: " + (iteration / OptimizationLoop.CustomPopulation);
             labelBestValue.Text = "Best Value: " + Math.Round(values[iteration - 1], 10);
 
             //Show Labels

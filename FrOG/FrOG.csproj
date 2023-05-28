@@ -35,6 +35,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="DynamicObj, Version=2.0.0.0, Culture=neutral, PublicKeyToken=7000be826734fb42, processorArchitecture=MSIL">
+      <HintPath>..\packages\DynamicObj.2.0.0\lib\netstandard2.0\DynamicObj.dll</HintPath>
+    </Reference>
+    <Reference Include="FSharp.Core, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\FSharp.Core.6.0.2\lib\netstandard2.0\FSharp.Core.dll</HintPath>
+    </Reference>
     <Reference Include="GalapagosLibrary">
       <HintPath>..\libraries\GalapagosLibrary.dll</HintPath>
       <Private>False</Private>
@@ -43,12 +49,21 @@
       <HintPath>..\libraries\GH_IO.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="Giraffe.ViewEngine, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Giraffe.ViewEngine.1.4.0\lib\netstandard2.0\Giraffe.ViewEngine.dll</HintPath>
+    </Reference>
     <Reference Include="Grasshopper">
       <HintPath>..\libraries\Grasshopper.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="MathNet.Numerics, Version=5.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\MathNet.Numerics.5.0.0\lib\net48\MathNet.Numerics.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Plotly.NET, Version=4.0.0.0, Culture=neutral, PublicKeyToken=c98c6d87097b7615, processorArchitecture=MSIL">
+      <HintPath>..\packages\Plotly.NET.4.0.0\lib\netstandard2.0\Plotly.NET.dll</HintPath>
     </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="System" />
@@ -91,6 +106,7 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include="app.config" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
